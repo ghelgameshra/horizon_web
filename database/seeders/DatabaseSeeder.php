@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Produk;
 use App\Models\Category;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -89,6 +90,13 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Kalender',
             'slug' => 'kalender'
+        ]);
+
+        User::create([
+            'name' => 'Rizky Andriawan',
+            'email' => 'rizkyandriawan33478@gmail.com',
+            'username' => 'ghelgameshra',
+            'password' => bcrypt('gh3lgameshra')
         ]);
     }
 }
