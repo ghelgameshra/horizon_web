@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class DashboardProdukController extends Controller
 {
@@ -27,7 +30,10 @@ class DashboardProdukController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.products.create', [
+            'title' => 'Horizon Dashboard | Add Product',
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -38,7 +44,7 @@ class DashboardProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -86,5 +92,8 @@ class DashboardProdukController extends Controller
         //
     }
 
-    
+    public function checkSlug( Request $request ){
+        $slug = SlugService::createSlug(Produk::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
+    }
 }

@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         Produk::create([
             'category_id' => 1,
             'name' => 'Banner Fl280',
-            'code' => '1_banner_fl280_'.time(),
+            'slug' => '1_banner_fl280_'.time(),
             'price' => 18000
 
         ]);
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
         Produk::create([
             'category_id' => 1,
             'name' => 'Banner Fl340',
-            'code' => '1_banner_fl3400_'.time(),
+            'slug' => '1_banner_fl3400_'.time(),
             'price' => 24000
 
         ]);
@@ -45,35 +45,35 @@ class DatabaseSeeder extends Seeder
         Produk::create([
             'category_id' => 2,
             'name' => 'Vynil Glossy',
-            'code' => '2_vynilglossy_'.time(),
+            'slug' => '2_vynilglossy_'.time(),
             'price' => 15000
         ]);
 
         Produk::create([
             'category_id' => 2,
             'name' => 'Vynil Doff',
-            'code' => '2_vynildoff_'.time(),
+            'slug' => '2_vynildoff_'.time(),
             'price' => 14500
         ]);
 
         Produk::create([
             'category_id' => 3,
             'name' => 'Kalender isi 4 AP150',
-            'code' => '3_kalenderisi4ap150'.time(),
+            'slug' => '3_kalenderisi4ap150'.time(),
             'price' => 14500
         ]);
 
         Produk::create([
             'category_id' => 2,
             'name' => 'AP150',
-            'code' => '2_ap150'.time(),
+            'slug' => '2_ap150'.time(),
             'price' => 7000
         ]);
 
         Produk::create([
             'category_id' => 2,
             'name' => 'AP230',
-            'code' => '2_ap230'.time(),
+            'slug' => '2_ap230'.time(),
             'price' => 7500
         ]);
 

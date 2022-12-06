@@ -50,6 +50,8 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 
+Route::get('/dashboard/products/checkSlug', [DashboardProdukController::class, 'checkSlug'])->middleware('auth');
+
 
 // route untuk CRUD
 Route::resource('/dashboard/products', DashboardProdukController::class)->middleware('auth');

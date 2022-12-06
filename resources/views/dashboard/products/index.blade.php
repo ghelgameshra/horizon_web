@@ -6,6 +6,7 @@
 </div>
 
 <div class="table-responsive">
+    <a href="/dashboard/products/create" class="btn btn-dark mb-2 fs-5 w-100"><span data-feather="plus"></span> Add Products</a>
     <table class="table table-striped table-sm">
         <thead>
         <tr>
@@ -25,7 +26,7 @@
             <td>{{ $product->category->name }}</td>
             <td>@currency($product['price'])</td>
             <td>
-                <a href="/dashboard/products/{{ $product->code }}" class="badge bg-info"><span data-feather="info"></span></a>
+                <a href="/dashboard/products/{{ $product->code }}" class="badge bg-success"><span data-feather="info"></span></a>
                 <a href="" class="badge bg-warning"><span data-feather="edit"></span></a>
 
                 <form action="/dashboard/products" method="post" class="d-inline">
