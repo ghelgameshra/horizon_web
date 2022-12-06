@@ -22,7 +22,8 @@ class ProdukController extends Controller
             'title' => 'Produk',
             'judul' => 'All Products',
             'produk' => Produk::orderBy('category_id', 'asc')->filter(request(['search', 'category']))->paginate(7)->withQueryString(),
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            ''
         ]);
     }
 

@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/"><i class="bi bi-house-door"></i> Home</a>
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/"><i class="bi bi-house-door"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/produk"><i class="bi bi-inboxes"></i> Produk</a>
+            <a class="nav-link {{ Request::is('produk') ? 'active' : '' }}" href="/produk"><i class="bi bi-inboxes"></i> Produk</a>
           </li>
         </ul>
         
@@ -34,7 +34,7 @@
 
           @else
             <li class="nav-item">
-              <a href="/login" class="nav-link"><i class="bi bi-person-circle"></i> Login</a>
+              <a href="/login" class="nav-link {{ Request::is('login') ? 'active' : '' }}"><i class="bi bi-person-circle"></i> Login</a>
             </li>
             @endauth
         </ul>
