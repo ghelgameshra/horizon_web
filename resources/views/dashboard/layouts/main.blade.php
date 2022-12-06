@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Horizon Dashboard</title>
+    <title>{{ $title }}</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/dashboard.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-
+    
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="{{ asset('dashboard/dashboard.css') }}" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+
 <style>
     .bd-placeholder-img {
     font-size: 1.125rem;
@@ -67,8 +68,6 @@
 </style>
 
 
-<!-- Custom styles for this template -->
-<link href="dashboard.css" rel="stylesheet">
 </head>
 <body>
 
@@ -86,8 +85,8 @@
 </div>
 
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('/js/dashboard.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('dashboard/dashboard.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/jquery-3.6.1.min.js') }}"></script>

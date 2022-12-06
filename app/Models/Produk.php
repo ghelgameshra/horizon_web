@@ -49,6 +49,6 @@ class Produk extends Model
 
 
     public function  getRouteKeyName(){
-        return 'slug';
+        return 'code';
     }
 }

@@ -44,7 +44,9 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', function(){
-    return view('dashboard.index');
+    return view('dashboard.index', [
+        'title' => 'Horizon Dashboard'
+    ]);
 })->middleware('auth');
 
 

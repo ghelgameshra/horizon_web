@@ -19,7 +19,7 @@
         <tbody>
             @foreach ($produk as $key=>$p)
             <tr>
-                <td>{{$key+1}} </td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{$p["name"]}}</td>
                 <td>{{ $p->category->name }}</td>
                 <td> @currency($p["price"]) </td>
