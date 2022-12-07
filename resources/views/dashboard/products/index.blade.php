@@ -5,6 +5,14 @@
     <h1 class="h2 fs-3">All Products</h1>
 </div>
 
+@if( session()->has('success') )
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Yeeey</strong> {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
+
 <div class="table-responsive">
     <a href="/dashboard/products/create" class="btn btn-dark mb-2 fs-5 w-100"><span data-feather="plus"></span> Add Products</a>
     <table class="table table-striped table-sm">

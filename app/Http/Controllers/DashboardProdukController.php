@@ -6,6 +6,7 @@ use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Carbon;
 
 
 class DashboardProdukController extends Controller
@@ -44,7 +45,22 @@ class DashboardProdukController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'category_id' => 'required',
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:produks',
+            'price' => 'required'
+        ]);
+
+        // gabung kode lama dengan tanggal data ditambah
+        // Ymd -> Year, Month, Day
+        // His -> Hour, Minute, Second
+        $validatedData['slug'] = $request->slug . "-" . now()->format('Ymd-His');
+
+        Produk::create( $validatedData );
+
+        return redirect('/dashboard/products')->with('success', 'New product has been added!');
+
     }
 
     /**

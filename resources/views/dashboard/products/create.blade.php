@@ -9,24 +9,43 @@
         @csrf
         <div class="mb-2">
             <label for="name" class="form-label">Product Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" autofocus value="{{ old('name') }}">
+            @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-2">
             <label for="slug" class="form-label">Product Code</label>
-            <input type="text" class="form-control" id="slug" name="slug" disabled readonly>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" readonly value="{{ old('slug') }}">
+            @error('slug')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-2">
             <label for="price" class="form-label">Product Code</label>
-            <input type="text" class="form-control" id="price" name="price" placeholder="Rp.">
+            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Rp. " value="{{ old('price') }}">
+            @error('price')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         
         <div class="mb-2">
             <label for="category_id" class="form-label">Category</label>
             <select class="form-select" name="category_id">
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @if ( old('category_id' == $category->id) )
+                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                    @else
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>
