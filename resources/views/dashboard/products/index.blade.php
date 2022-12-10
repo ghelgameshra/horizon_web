@@ -34,13 +34,13 @@
             <td>{{ $product->category->name }}</td>
             <td>@currency($product['price'])</td>
             <td>
-                <a href="/dashboard/products/{{ $product->code }}" class="badge bg-success"><span data-feather="info"></span></a>
-                <a href="" class="badge bg-warning"><span data-feather="edit"></span></a>
+                <a href="/dashboard/products/{{ $product->code }}" class="badge bg-success"><i class="bi bi-info-circle"></i></a>
+                <a href="" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
 
                 <form action="/dashboard/products" method="post" class="d-inline">
                     @method('delete')
                     @csrf
-                    <button class="badge bg-danger border-0"><span data-feather="trash"></button>
+                    <button class="badge bg-danger border-0"><i class="bi bi-x-circle"></i></button>
                 </form>
             </td>
         </tr>
