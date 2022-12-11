@@ -14,6 +14,8 @@
         <button class="badge bg-danger border-0" onclick="return confirm('Are you sure ?')"><i class="bi bi-x-circle"></i></button>
     </form>
 </div>
+
+
 <div class="row">
     <div class="col-lg-4">
         <div class="mb-2">
@@ -46,5 +48,16 @@
             <input type="text" class="form-control" id="category_id" name="category_id" readonly value="{{ $product->category->name }}" disabled>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="mb-2">
+            <label for="image" class="form-label">Product Image</label>
+            @if ($product->image)
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->category->name }}" class="img-fluid" id="image" style="max-height: 300px; overflow: hideen;">
+            @else
+                <img src="{{ asset('storage/product-images/abstract-wallpaper-2102021935322.jpg') }}" alt="{{ $product->category->name }}" class="img-fluid" style="max-height: 300px; overflow: hideen;">
+            @endif
+        </div>
+    </div>
 </div>
+
 @endsection

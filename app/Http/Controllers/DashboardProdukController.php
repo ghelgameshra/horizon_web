@@ -47,12 +47,18 @@ class DashboardProdukController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'category_id' => 'required',
             'name' => 'required|max:255',
             'slug' => 'required|unique:produks',
-            'price' => 'required'
+            'price' => 'required',
+            'image' => 'image|file|max:2048'
         ]);
+
+        if( $request->file('image') ){
+            $validatedData['image'] = $request->file('image')->store('product-images');
+        }
 
         // gabung kode lama dengan tanggal data ditambah
         // Ymd -> Year, Month, Day

@@ -21,7 +21,7 @@ class ProdukController extends Controller
         return view('produk', [
             'title' => 'Produk',
             'judul' => 'All Products',
-            'produk' => Produk::orderBy('category_id', 'asc')->filter(request(['search', 'category']))->paginate(7)->withQueryString(),
+            'produk' => Produk::orderBy('category_id', 'asc')->filter(request(['search', 'category']))->paginate(15)->withQueryString(),
             'categories' => Category::all(),
             ''
         ]);
