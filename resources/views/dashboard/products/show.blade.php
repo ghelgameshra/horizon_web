@@ -8,10 +8,10 @@
     <a href="/dashboard/products/" class="badge bg-success"><i class="bi bi-arrow-left px-2 py-2"></i></a>
     <a href="" class="badge bg-warning"><i class="bi bi-pencil-square px-2 py-2"></i></a>
 
-    <form action="/dashboard/products" method="post" class="d-inline">
+    <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
         @method('delete')
         @csrf
-        <button class="badge bg-danger border-0"><i class="bi bi-x-circle px-2 py-2"></i></button>
+        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure ?')"><i class="bi bi-x-circle"></i></button>
     </form>
 </div>
 <div class="row">

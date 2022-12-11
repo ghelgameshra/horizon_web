@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" id="modalButton1" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <strong>Yeeey</strong> {{ session('success') }}
+          {{ session('success') }}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="modalButton2" data-bs-dismiss="modal">Close</button>

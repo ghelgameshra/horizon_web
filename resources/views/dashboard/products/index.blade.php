@@ -39,10 +39,10 @@
                 <a href="/dashboard/products/{{ $product->slug }}" class="badge bg-success"><i class="bi bi-info-circle"></i></a>
                 <a href="" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
 
-                <form action="/dashboard/products" method="post" class="d-inline">
+                <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
                     @method('delete')
                     @csrf
-                    <button class="badge bg-danger border-0"><i class="bi bi-x-circle"></i></button>
+                    <button class="badge bg-danger border-0" onclick="return confirm('Are you sure ?')"><i class="bi bi-x-circle"></i></button>
                 </form>
             </td>
         </tr>
