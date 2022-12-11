@@ -21,7 +21,8 @@ class DashboardProdukController extends Controller
     {
         return view('dashboard.products.index', [
             'title' => 'Horizon Dashboard | Products',
-            'products' => Produk::orderBy('category_id')->get()
+            'products' => Produk::orderBy('category_id')->get(),
+            'categories' => Category::all()
         ]);
     }
 
@@ -76,7 +77,7 @@ class DashboardProdukController extends Controller
 
         return view('dashboard.products.show', [
             'title' => $product->name,
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
@@ -134,7 +135,7 @@ class DashboardProdukController extends Controller
     {
         Produk::destroy( $product->id );
 
-        return redirect('/dashboard/products')->with('success', 'New product has been deleted!');
+        return redirect('/dashboard/products')->with('success', 'A product has been deleted!');
     }
 
     public function checkSlug( Request $request ){

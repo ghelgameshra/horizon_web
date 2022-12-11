@@ -5,9 +5,9 @@
     </button>
     <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
-        <form action="/logout" method="POST">
+        <form action="/logout" method="POST" class="d-flex justify-content-center">
             @csrf
-            <button type="submit" class="nav-link px-3 d-flex align-items-center" style="background: inherit; border: inherit"><span data-feather="log-out"></span>  Logout</button>
+            <button type="submit" class="nav-link px-3 d-flex align-items-center fs-6" style="background: inherit; border: inherit"><i class="bi bi-person-x mx-2"></i>  Logout</button>
         </form>
     </div>
 </header>
