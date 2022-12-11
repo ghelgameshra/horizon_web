@@ -6,7 +6,7 @@
 
 <div class="fs-4 mb-4">
     <a href="/dashboard/products/" class="badge bg-success"><i class="bi bi-arrow-left px-2 py-2"></i></a>
-    <a href="" class="badge bg-warning"><i class="bi bi-pencil-square px-2 py-2"></i></a>
+    <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square px-2 py-2"></i></a>
 
     <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
         @method('delete')

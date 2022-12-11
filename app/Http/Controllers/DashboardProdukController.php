@@ -6,6 +6,7 @@ use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Carbon;
 
 
@@ -85,9 +86,13 @@ class DashboardProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produk $produk)
+    public function edit(Produk $product)
     {
-        //
+        return view('dashboard.products.edit', [
+            'title' => 'Edit Details',
+            'product' => $product,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -97,9 +102,26 @@ class DashboardProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produk $produk)
+    public function update(Request $request, Produk $product)
     {
-        //
+        
+        if( $request->slug != $product->slug ){
+            $rules['slug'] = 'required|unique:produks';
+        }
+
+        $rules = [
+            'category_id' => 'required',
+            'name' => 'required|max:255',
+            'price' => 'required'
+        ];
+        
+        
+        $validatedData = $request->validate($rules);
+        
+        Produk::where( 'id', $product->id )
+            ->update($validatedData);
+        
+        return redirect('/dashboard/products')->with('success', 'A product has been updated!');
     }
 
     /**

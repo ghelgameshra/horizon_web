@@ -37,7 +37,7 @@
             <td>@currency($product['price'])</td>
             <td>
                 <a href="/dashboard/products/{{ $product->slug }}" class="badge bg-success"><i class="bi bi-info-circle"></i></a>
-                <a href="" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
+                <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
 
                 <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
                     @method('delete')
@@ -57,7 +57,7 @@
     document.querySelector('#notification-modal').addEventListener('click', evt => {
         if( !evt.target.matches('button') ) return;
         const button = document.querySelector('#notification-modal');
-        button.classList.remove('show');
+        button.classList.remove('show', 'd-block');
     })
 
 </script>
