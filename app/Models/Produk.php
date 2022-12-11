@@ -10,7 +10,7 @@ class Produk extends Model
 {
     use HasFactory;
     use Sluggable;
-    protected $guarded = ['id', 'slug'];
+    protected $guarded = ['id'];
     protected $with = ['category', 'kategori'];
 
     public function scopeFilter($query, array $filters){
