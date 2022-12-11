@@ -34,7 +34,7 @@
             <td>{{ $product->category->name }}</td>
             <td>@currency($product['price'])</td>
             <td>
-                <a href="/dashboard/products/{{ $product->code }}" class="badge bg-success"><i class="bi bi-info-circle"></i></a>
+                <a href="/dashboard/products/{{ $product->slug }}" class="badge bg-success"><i class="bi bi-info-circle"></i></a>
                 <a href="" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
 
                 <form action="/dashboard/products" method="post" class="d-inline">

@@ -69,9 +69,14 @@ class DashboardProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function show(Produk $produk)
+    public function show(Produk $product)
     {
-        //
+        // dd($product);
+
+        return view('dashboard.products.show', [
+            'title' => $product->name,
+            'product' => $product
+        ]);
     }
 
     /**

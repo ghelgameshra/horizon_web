@@ -10,7 +10,7 @@ class Produk extends Model
 {
     use HasFactory;
     use Sluggable;
-    protected $guarded = ['id', 'code'];
+    protected $guarded = ['id', 'slug'];
     protected $with = ['category', 'kategori'];
 
     public function scopeFilter($query, array $filters){
@@ -51,7 +51,7 @@ class Produk extends Model
 
 
     public function  getRouteKeyName(){
-        return 'code';
+        return 'slug';
     }
 
     public function sluggable(): array
