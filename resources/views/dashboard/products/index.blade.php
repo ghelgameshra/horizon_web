@@ -6,11 +6,13 @@
 </div>
 
 @if( session()->has('success') )
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{-- <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Yeeey</strong> {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+</div> --}}
+    @include('dashboard.products.modal')
 @endif
+
 
 
 <div class="table-responsive">
@@ -48,5 +50,16 @@
         </tbody>
     </table>
 </div>
+
+<script>
+
+    // tutup modal notifikasi
+    document.querySelector('#notification-modal').addEventListener('click', evt => {
+        if( !evt.target.matches('button') ) return;
+        const button = document.querySelector('#notification-modal');
+        button.classList.remove('show');
+    })
+
+</script>
 
 @endsection
