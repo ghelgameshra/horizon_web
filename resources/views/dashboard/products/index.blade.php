@@ -14,7 +14,7 @@
 @endif
 
 
-<div class="row">
+<div class="row" style="overflow-x: auto">
     <div class="table-responsive">
         <a href="/dashboard/products/create" class="btn btn-dark mb-2 fs-5 w-100"><i class="bi bi-plus"></i> Add Products</a>
         <table class="table table-striped table-lg fs-6">
