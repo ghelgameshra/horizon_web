@@ -98,5 +98,12 @@ class DatabaseSeeder extends Seeder
             'username' => 'ghelgameshra',
             'password' => bcrypt('gh3lgameshra')
         ]);
+
+        User::create([
+            'name' => 'Devi Wahyuni',
+            'email' => 'devi@gmail.com',
+            'username' => 'deviwahyuni',
+            'password' => bcrypt('password')
+        ]);
     }
 }
