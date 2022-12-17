@@ -23,7 +23,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
                     <i class="bi bi-collection"></i>
-                    Product Categories
+                    Categories
                 </a>
             </li>
         </ul>

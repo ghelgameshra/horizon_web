@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProdukController;
@@ -56,4 +57,4 @@ Route::get('/dashboard/products/checkSlug', [DashboardProdukController::class, '
 
 // route untuk CRUD
 Route::resource('/dashboard/products', DashboardProdukController::class)->middleware('auth');
-Route::resource('/dashboard/categories', AdminController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/categories', DashboardCategoryController::class)->except('show')->middleware('admin');
