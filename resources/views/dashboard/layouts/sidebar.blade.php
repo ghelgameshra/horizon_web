@@ -7,6 +7,22 @@
                     Dashboard
                 </a>
             </li>
+        </ul>
+
+        @can('admin')    
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Administrator</span>
+        </h6>
+        @endcan
+        <ul class="nav flex-column fs-6">
+            @can('admin')    
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
+                    <i class="bi bi-collection"></i>
+                    Categories
+                </a>
+            </li>
+            @endcan
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/products*') ? 'active' : '' }}" href="/dashboard/products">
                     <i class="bi bi-clipboard-data"></i>
@@ -14,20 +30,6 @@
                 </a>
             </li>
         </ul>
-
-        @can('admin')    
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Administrator</span>
-        </h6>
-        <ul class="nav flex-column fs-6">
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
-                    <i class="bi bi-collection"></i>
-                    Categories
-                </a>
-            </li>
-        </ul>
-        @endcan
 
 
     </div>

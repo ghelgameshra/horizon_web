@@ -6,6 +6,7 @@
 
 <div class="fs-4 mb-4">
     <a href="/dashboard/products/" class="badge bg-success"><i class="bi bi-arrow-left px-2 py-2"></i></a>
+    @can('admin')    
     <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square px-2 py-2"></i></a>
 
     <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
@@ -13,6 +14,7 @@
         @csrf
         <button class="badge bg-danger border-0" onclick="return confirm('Are you sure ?')"><i class="bi bi-x-circle"></i></button>
     </form>
+    @endcan
 </div>
 
 

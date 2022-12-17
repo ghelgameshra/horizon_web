@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 
 class DashboardProdukController extends Controller
 {
@@ -33,6 +33,11 @@ class DashboardProdukController extends Controller
      */
     public function create()
     {
+
+        if(!Auth::user()->is_admin){
+            return redirect('/dashboard/products');
+        }
+
         return view('dashboard.products.create', [
             'title' => 'Horizon Dashboard | Add Product',
             'categories' => Category::all()
@@ -47,6 +52,10 @@ class DashboardProdukController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(!Auth::user()->is_admin){
+            redirect('/dashboard/products');
+        }
 
         $validatedData = $request->validate([
             'category_id' => 'required',
@@ -95,6 +104,10 @@ class DashboardProdukController extends Controller
      */
     public function edit(Produk $product)
     {
+        if(!Auth::user()->is_admin){
+            return redirect('/dashboard/products');
+        }
+
         return view('dashboard.products.edit', [
             'title' => 'Edit Details',
             'product' => $product,
@@ -111,6 +124,9 @@ class DashboardProdukController extends Controller
      */
     public function update(Request $request, Produk $product)
     {
+        if(!Auth::user()->is_admin){
+            return redirect('/dashboard/products');
+        }
         
         if( $request->slug != $product->slug ){
             $rules['slug'] = 'required|unique:produks';
@@ -139,6 +155,10 @@ class DashboardProdukController extends Controller
      */
     public function destroy(Produk $product)
     {
+        if(!Auth::user()->is_admin){
+            return redirect('/dashboard/products')->with('success', 'Failed to delete product!');
+        }
+
         Produk::destroy( $product->id );
 
         return redirect('/dashboard/products')->with('success', 'A product has been deleted!');

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -8,9 +7,6 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardProdukController;
 
-
-use App\Models\Category;
-use App\Models\Produk;
 
 /*
 |--------------------------------------------------------------------------
