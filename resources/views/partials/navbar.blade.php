@@ -12,6 +12,9 @@
           <li class="nav-item">
             <a class="nav-link {{ Request::is('produk') ? 'active' : '' }}" href="/produk"><i class="bi bi-inboxes"></i> Produk</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about"><i class="bi bi-info-circle"></i> About</a>
+          </li>
         </ul>
         
         <ul class="navbar-nav">

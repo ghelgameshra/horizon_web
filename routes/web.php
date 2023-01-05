@@ -32,6 +32,7 @@ Route::get('/user', [UserController::class, 'show']);
 Route::get('/tambah', [UserController::class, 'tambah']);
 
 Route::get('/produk', [ProdukController::class, 'tampilProduk']);
+Route::get('/about', [ProdukController::class, 'about']);
 
 
 Route::get('/produk/{produk:slug}', [PostController::class, 'tampilProduk']);

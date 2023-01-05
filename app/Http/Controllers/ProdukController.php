@@ -27,5 +27,16 @@ class ProdukController extends Controller
         ]);
     }
 
+    public function about(){
+        return view('about', [
+            'title' => 'Rizky Andriawan',
+            'alias' => 'Ghelgameshra',
+            'subtitle' => 'Student of Infomatics Engineering',
+            'email' => 'rizkyandriawan33478@gmail.com',
+            'lecturer' => 'Sonhaji Akbar S.Pd,. M.Kom',
+            'address' => 'Wonosari, Kabupaten Malang, Jawa Timur'
+        ]);
+    }
+
 
 }
